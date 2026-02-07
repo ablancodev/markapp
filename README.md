@@ -82,22 +82,6 @@ Por seguridad, los navegadores bloquean el acceso a carpetas del sistema.
 - `/Applications/` (Mac)
 - Carpetas de sistema o programas instalados
 
-### Usuarios de XAMPP (avanzado)
-
-Si necesitas acceder a carpetas en XAMPP:
-
-**Opción 1 - Copiar:**
-```bash
-# Windows (CMD):
-xcopy /E /I "C:\xampp\htdocs\proyecto" "%USERPROFILE%\Documents\proyecto"
-
-# Mac/Linux:
-cp -r /Applications/XAMPP/xamppfiles/htdocs/proyecto ~/Documents/proyecto
-```
-
-**Opción 2 - Enlace simbólico:**
-Usa los scripts incluidos: `create-symlink.sh` (Mac/Linux) o `create-symlink.bat` (Windows)
-
 ## Temas visuales
 
 Tres temas disponibles (botones en la esquina superior derecha):
@@ -151,5 +135,3 @@ Proyecto de código abierto y gratuito. Puedes usarlo, modificarlo y compartirlo
 **MarkApp by ablancodev** - Editor de documentos Markdown privado y local.
 
 Desarrollado por [ablancodev.com](https://ablancodev.com)
-
-*Inspirado en Notion, diseñado para la privacidad.*
