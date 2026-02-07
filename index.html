@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkApp by ablancodev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1>MarkApp <span style="font-size: 0.5em; font-weight: 300; opacity: 0.7;">by >_ablancodev</span></h1>
+        </div>
+        <div class="header-right">
+            <div class="theme-selector">
+                <button class="theme-btn active" data-theme="light" title="Light">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="theme-btn" data-theme="dark" title="Dark">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="theme-btn" data-theme="retro-green" title="Retro Terminal">
+                    <i class="fa-solid fa-terminal"></i>
+                </button>
+            </div>
+            <button id="openFolderBtn" class="btn btn-primary">
+                <i class="fa-solid fa-folder-open"></i>
+                Abrir Carpeta
+            </button>
+        </div>
+    </header>
+
+    <!-- Tabs Bar -->
+    <div class="tabs-bar" id="tabsBar" style="display: none;">
+        <div class="tabs-container" id="tabsContainer">
+            <!-- Tabs will be rendered here dynamically -->
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Páginas</h3>
+                <div class="sidebar-actions">
+                    <button id="newFolderBtn" class="btn-icon" title="Nueva carpeta" disabled>
+                        <i class="fa-solid fa-folder-plus"></i>
+                    </button>
+                    <button id="newPageBtn" class="btn-icon" title="Nueva página" disabled>
+                        <i class="fa-solid fa-file-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="sidebar-content" id="sidebarTree">
+                <div class="empty-sidebar">
+                    <i class="fa-solid fa-folder-open" style="font-size: 48px; opacity: 0.3;"></i>
+                    <p>Abre una carpeta para comenzar</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="content-title" id="contentTitle">Sin archivo seleccionado</div>
+                <div class="content-actions">
+                    <div class="mode-toggle" id="modeToggle" style="display: none;">
+                        <button class="mode-btn active" data-mode="view">
+                            <i class="fa-solid fa-eye"></i>
+                            Vista
+                        </button>
+                        <button class="mode-btn" data-mode="edit">
+                            <i class="fa-solid fa-pen"></i>
+                            Edición
+                        </button>
+                    </div>
+                    <button id="saveBtn" class="btn btn-success" style="display: none;">Guardar</button>
+                </div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="editor-container" id="editorContainer">
+                <div class="empty-state">
+                    <i class="fa-solid fa-file-lines" style="font-size: 64px; opacity: 0.2;"></i>
+                    <h2>Selecciona un archivo del sidebar</h2>
+                    <p>O crea una nueva página con el botón</p>
+                </div>
+
+                <!-- Markdown Editor -->
+                <textarea id="markdownEditor" class="markdown-editor" placeholder="Escribe tu markdown aquí..." style="display: none;"></textarea>
+
+                <!-- HTML Viewer -->
+                <div id="markdownViewer" class="markdown-viewer" style="display: none;"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for new page -->
+    <div id="newPageModal" class="modal">
+        <div class="modal-content">
+            <h3>Nueva Página</h3>
+
+            <label class="modal-label">Nombre de la página</label>
+            <input type="text" id="newPageName" placeholder="nombre-de-pagina" class="modal-input">
+
+            <label class="modal-label">Tipo de archivo</label>
+            <select id="fileTypeSelect" class="modal-select">
+                <option value="md">Markdown (.md)</option>
+                <option value="txt">Texto plano (.txt)</option>
+            </select>
+
+            <label class="modal-label">Ubicación</label>
+            <select id="folderSelect" class="modal-select">
+                <option value="">Raíz de la carpeta</option>
+            </select>
+
+            <div class="modal-actions">
+                <button id="cancelNewPage" class="btn btn-secondary">Cancelar</button>
+                <button id="confirmNewPage" class="btn btn-primary">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for new folder -->
+    <div id="newFolderModal" class="modal">
+        <div class="modal-content">
+            <h3>Nueva Carpeta</h3>
+
+            <label class="modal-label">Nombre de la carpeta</label>
+            <input type="text" id="newFolderNameInput" placeholder="mi-carpeta" class="modal-input">
+
+            <label class="modal-label">Ubicación</label>
+            <select id="folderSelectForFolder" class="modal-select">
+                <option value="">Raíz de la carpeta</option>
+            </select>
+
+            <div class="modal-actions">
+                <button id="cancelNewFolder" class="btn btn-secondary">Cancelar</button>
+                <button id="confirmNewFolder" class="btn btn-primary">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/storage.js?v=11"></script>
+    <script src="js/theme.js?v=11"></script>
+    <script src="js/tabs.js?v=11"></script>
+    <script src="js/fileManager.js?v=11"></script>
+    <script src="js/sidebar.js?v=11"></script>
+    <script src="js/editor.js?v=11"></script>
+    <script src="js/viewer.js?v=11"></script>
+    <script src="js/app.js?v=11"></script>
+</body>
+</html>
