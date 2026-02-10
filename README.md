@@ -8,11 +8,7 @@
 
 ## 🎥 Video demostración
 
-Ve cómo funciona MarkApp en menos de un minuto:
-
-https://github.com/user-attachments/assets/markapp.mov
-
-> **Nota:** Si el video no se reproduce en GitHub, descarga el archivo `markapp.mov` del repositorio o mira la demostración después de instalar la aplicación.
+Ve cómo funciona MarkApp en menos de un minuto: [Ver video](./markapp.mov)
 
 ## ¿Qué puedes hacer con MarkApp?
 
