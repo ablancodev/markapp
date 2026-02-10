@@ -6,9 +6,9 @@
 
 **Desarrollado por:** [ablancodev.com](https://ablancodev.com)
 
-## 🎥 Video demostración
+## 🎥 Demo
 
-Ve cómo funciona MarkApp en menos de un minuto: [Ver video](./markapp.mp4)
+![Demo de MarkApp](./markapp.gif)
 
 ## ¿Qué puedes hacer con MarkApp?
 
