@@ -8,7 +8,7 @@
 
 ## 🎥 Video demostración
 
-Ve cómo funciona MarkApp en menos de un minuto: [Ver video](./markapp.mov)
+Ve cómo funciona MarkApp en menos de un minuto: [Ver video](./markapp.mp4)
 
 ## ¿Qué puedes hacer con MarkApp?
 
