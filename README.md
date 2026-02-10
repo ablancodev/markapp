@@ -6,6 +6,14 @@
 
 **Desarrollado por:** [ablancodev.com](https://ablancodev.com)
 
+## 🎥 Video demostración
+
+Ve cómo funciona MarkApp en menos de un minuto:
+
+https://github.com/user-attachments/assets/markapp.mov
+
+> **Nota:** Si el video no se reproduce en GitHub, descarga el archivo `markapp.mov` del repositorio o mira la demostración después de instalar la aplicación.
+
 ## ¿Qué puedes hacer con MarkApp?
 
 - Escribir y organizar documentos en formato Markdown o texto plano
